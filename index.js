@@ -57,8 +57,8 @@ if (cart.length >= 3) {
 function total() {
   let t = 0;
   var item = [];
-  for (var key in cart) {
-  t += parseInt(cart[item]);
+  for (var total in cart) {
+  t += parseInt(cart[total]);
   }
   return t;
 }
