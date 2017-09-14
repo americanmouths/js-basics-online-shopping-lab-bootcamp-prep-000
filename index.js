@@ -19,19 +19,39 @@ function addToCart(item) {
 }
 
 function viewCart() {
-   if (cart.length === 0) {
-     console.log("Your shopping cart is empty.");
+   var cartKeys = [];
+   var cartPrice = [];
+   for (let i = 0; i < cart.length; i++) {
+   cartKeys.push(Object.keys(cart[i])[0]);
    }
-   let statementArray = []
-   let i = 0, l = cart.length
-   while(i<l) {
-     var item = Object.keys(cart[i])[0]
-     var price = cart[i][item]
-     statementArray.push(item +" at $" + price);
-     i++
-   }
-   console.log(`In your cart, you have ${statementArray.join(', ')}.`)
- }
+
+   for (let i = 0; i < cart.length; i++) {
+   cartPrice.push(cart[i][cartKeys[i]]);
+  }
+
+  if (cart.length < 1) {
+    console.log("Your shopping cart is empty.");
+}
+
+  if (cart.length === 1) {
+     console.log(`In your cart, you have ${cartKeys[0]} at $${cartPrice[0]}.`);
+}
+
+  if (cart.length === 2) {
+      console.log(`In your cart, you have ${cartKeys[0]} at $${cartPrice[0]} and ${cartKeys[1]} at $${cartPrice[1]}.`);
+}
+
+if (cart.length >= 3) {
+     var twoOrMore = `In your cart, you have`;
+     for (let i = 0; i < cart.length; i++) {
+     twoOrMore += ` ${cartKeys[i]} at $${cartPrice[i]},`;
+     }
+     var threeOrMore = twoOrMore.slice(0,twoOrMore.length - 1);
+     threeOrMore = threeOrMore.replace(/,([^,]*)$/,"\, and$1");
+     threeOrMore += '.';
+     console.log(`${threeOrMore}`);
+     }
+ }		  
 
 function total() {
   var sum = 0;
