@@ -62,7 +62,7 @@ for (var i = 0; i < cart.length; i++) {
   cartKeys.push(Object.keys(cart[i])[0]);
 }
 for (var i = 0; i < cart.length; i++) {
-  cartPrice.push(Object.keys(cart[i][cartKeys[i]]));
+  cartPrice.push(Object.keys(cart[i][cartKeys[i]]);
 }
 for (var i = 0; i < cart.length; i++) {
   totalItems += cartPrice[i];
