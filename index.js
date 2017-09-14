@@ -55,12 +55,19 @@ if (cart.length >= 3) {
 
 
 function total() {
-  let t = 0;
-  var item = [];
-  for (var total in cart) {
-  t += parseInt(cart[total]);
-  }
-  return t;
+  var totalItems = 0;
+  var cartKeys = [];
+  var cartPrice = [];
+for (var i = 0; i < cart.length; i++) {
+  cartKeys.push(Object.keys(cart[i])[0]);
+}
+for (var i = 0; i < cart.length; i++) {
+  cartPrice.push(Object.keys(cart[i][cartKeys[i]]));
+}
+for (var i = 0; i < cart.length; i++) {
+  totalItems += cartPrice[i];
+}
+return totalItems;
 }
 
 function removeFromCart(item) {
