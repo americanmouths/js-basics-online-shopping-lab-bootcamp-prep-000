@@ -53,13 +53,14 @@ if (cart.length >= 3) {
      }
  }		  
 
+
 function total() {
-  var sum = 0;
+  let t = 0;
   var item = [];
   for (var key in cart) {
-  sum += parseInt(cart[item]);
+  t += parseInt(cart[item]);
   }
-  return sum;
+  return t;
 }
 
 function removeFromCart(item) {
