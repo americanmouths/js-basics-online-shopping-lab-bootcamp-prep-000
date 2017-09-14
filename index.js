@@ -51,7 +51,7 @@ if (cart.length >= 3) {
      threeOrMore += '.';
      console.log(`${threeOrMore}`);
      }
- }		  
+ }
 
 
 function total() {
